@@ -4,8 +4,6 @@ var express = require('express'),
 
 var app = module.exports = express.Router();
 
-var date = new Date();
-
 var users = global.users = [{
     id: 0,
     login: 'admin',
@@ -15,8 +13,15 @@ var users = global.users = [{
     email: "nedim51@mail.ru",
     score: 0, //суммарный опыт
     level: 0,
-    dateRegistration: 0,
-    amountWin:  { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
+    dateRegistration: {
+        sec: 0,
+        min: 0,
+        hour: 0,
+        date: 0,
+        month: 0,
+        year: 0
+    },
+    amountWin: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
     amountLose: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
     amountDraw: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 }
 }];
@@ -36,25 +41,37 @@ app.post('/login', function (req, res) {
 });
 
 app.post('/reg', function (req, res) {
-    var userReg = _.find(users, { login: req.body.loginReg });
-    if(!userReg) {
+    // ищу в users совпадение со структуркой { login: req.body.user.login }
+    var userReg = _.find(users, { login: req.body.user.login });
+    if (!userReg) {
         users[users.length] = {
             id: users.length,
-            login: req.body.loginReg,
-            password: req.body.passwordReg,
-            surname: req.body.surnameReg,
-            name: req.body.nameReg,
-            email: req.body.emailReg,
+            login: req.body.user.login,
+            password: req.body.user.password,
+            surname: req.body.user.surname,
+            name: req.body.user.name,
+            email: req.body.user.email,
             score: 0,
             level: 0,
-            dateRegistration: new Date(),
-            amountWin:  { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
-            amountLose: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
-            amountDraw: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 }
-        }} 
-    else { return res.send({ success: false, message: "Логин занят!" })}
+            dateRegistration: {
+                sec: new Date().getSeconds(),
+                min: new Date().getMinutes(),
+                hour: new Date().getHours(),
+                date: new Date().getDate(),
+                month: new Date().getMonth(),
+                year: new Date().getFullYear()
+            },
+            quantityWin: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
+            quantityLose: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 },
+            quantityDraw: { bot: { easy: 0, middle: 0, hard: 0 }, person: 0 }
+        }
+    }
+    else {
+        return res.send({
+            success: false, message: "Логин занят!"
+        })
+    }
     res.send({
         success: true, id_token: createToken(users[users.length - 1])
     });
-    console.log(users);
 });
