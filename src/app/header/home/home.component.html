@@ -1,0 +1,55 @@
+<label class="message"></label>
+<label class="message" ng-show="message!=undefined">{{message}}</label>
+
+<table class="game-table table-bordered">
+  <tr>
+    <td class="item"></td>
+    <td class="item"></td>
+    <td class="item"></td>
+  <tr>
+    <td class="item"></td>
+    <td class="item"></td>
+    <td class="item"></td>
+  <tr>
+    <td class="item"></td>
+    <td class="item"></td>
+    <td class="item"></td>
+</table>
+
+<div>
+  <h2 class="title-score">СЕЙЧАС В СЕТИ</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="row">#</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th id="online-tab-score">Уровень</th>
+      </tr>
+    </thead>
+    <tbody id="online-tab-all">
+
+      <!-- <tr id="0" class="online-tab-line" *ngFor="let item of onlineusers; index as i;" (click)="GameForTwo(i)">
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td id="online-tab-score"></td>
+      </tr> -->
+
+    </tbody>
+  </table>
+</div>
+
+<!-- <div id="parent_popup" *ngIf="ModalWindow">
+  <div id="popup">
+    <p id="messageText" *ngIf="state == 'wait'">Ожидание подтверждения от игрока: {{onlineusers[Player_2].name}}
+      {{onlineusers[Player_2].surname}} {{time}} сек.</p>
+    <p id="messageText" *ngIf="state == 'timeOut'">Время вышло</p>
+    <p id="messageText" *ngIf="state == 'cancel'"> {{onlineusers[Player_2].name}} {{onlineusers[Player_2].surname}}
+      отклонил ваше приглашение</p>
+    <p id="messageText" *ngIf="state == 'incoming'"> {{onlineusers[Player_1].name}} {{onlineusers[Player_1].surname}}
+      приглашает на игру</p>
+    <p id="ok" (click)="clt(true)" *ngIf="state == 'timeOut' || state == 'cancel' || state == 'incoming'">Ok</p>
+    <p id="cancel" (click)="clt(false)" *ngIf="state == 'wait' || state == 'incoming'">Отмена</p>
+  </div>
+</div> -->

@@ -1,0 +1,26 @@
+body {
+    background-color: #fdfdfe;
+}
+
+div {
+    text-align: center;
+    margin: -8px 0px 0px 0px;
+}
+
+div div {
+    display: inline-block;
+    max-width: 100%;
+    border: 1px;
+}
+
+div table thead {
+    text-align: right;
+}
+
+div table tr td:nth-child(2) {
+    text-align: right;
+}
+
+table th, table tr, table tr td {
+    background-color: white;
+}

@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <table class="table table-light">
+      <th colspan="4">Настройки</th>
+      <tr *ngFor="let item of settingsItems">
+        <td style="width: 50%"></td>
+        <td>{{item.title}}</td>
+        <td><input class="input-group-text" type="{{item.type}}" value="{{item.value}}"></td>
+        <td style="width: 50%"></td>
+      </tr>
+    </table>
+  <button class="btn btn-outline-success" (click)="out(item)">Сохранить</button>
+</div>
+</div>

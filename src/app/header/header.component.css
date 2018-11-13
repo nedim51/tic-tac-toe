@@ -1,0 +1,37 @@
+body {
+    user-select: none;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.head {
+    background-color: #4caf50df;
+    margin: -2px 0px 0px 0px;
+}
+
+.head ol {
+    list-style-type: none;
+    padding: 1px;
+    text-align: center;
+}
+
+.head ol li {
+    border: 1px solid #4caf5019;
+    border-radius: .25rem;
+    padding: 7px 4px 8px 4px;
+    margin: 5px 15px 5px 15px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.head ol li:hover {
+    cursor: pointer;
+    border: 1px solid green;
+    background-color: #4caf50ff;
+}
+
+#header-avatar {
+    border: 1px solid green;
+    width: 50px;
+    height: 50px;
+}
