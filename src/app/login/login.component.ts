@@ -11,7 +11,6 @@ export class LoginComponent implements OnInit {
 
   constructor(public router: Router, private httpClient: HttpClient) { };
 
-
   message: string = undefined;
   view: string = "login";
 
