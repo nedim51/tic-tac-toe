@@ -30,13 +30,6 @@ export class LoginComponent implements OnInit {
     }, 100);
   }
 
-  onKey(event, field, fieldValue) {
-    console.log(event);
-    console.log(field);
-    console.log(fieldValue);
-    localStorage.setItem(field, fieldValue);
-  }
-
   auth(event, login, password) {
     event.preventDefault();
     this.message = undefined;
