@@ -10,7 +10,7 @@
       <label style="margin-top:20px" ng-show="message!=undefined">{{message}}</label>
     </form>
     <form id="register-form" *ngIf="view=='register'"><!--/*pattern="[a-z]+@[a-z]+\.[a-z]{2,4}$"-->
-      <input #nameReg type="text" placeholder="Имя" (keyup)="onKey($event, nameReg., nameReg.value)">
+      <input #nameReg type="text" placeholder="Имя" (keyup)="onKey($event, nameReg.name, nameReg.value)">
       <input #surnameReg type="text" placeholder="Фамилия" (keyup)="onKey($event, surnameReg.name, surnameReg.value)"/>
       <input #loginReg type="text" placeholder="Логин" (keyup)="onKey($event, loginReg.name, loginReg.value)"/>
       <input #passwordReg type="password" placeholder="Пароль" (keyup)="onKey($event, passwordReg.name, passwordReg.value)"/>
