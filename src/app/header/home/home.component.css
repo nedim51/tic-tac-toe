@@ -8,7 +8,7 @@ table {
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
+} 
 .item {
     height: 100px;
     width: 100px;
@@ -150,6 +150,11 @@ span {
     z-index: 100;
     top: 0;
     left: 0;
+}
+
+/************/
+#homeGame {
+    margin: 90px 0px 20px 0px;
 }
 
 /* CSS rules are kept repetitive so that you can get CSS rules for each button easily :) */
@@ -322,4 +327,8 @@ body
 #button-11 .checkbox:checked ~ .layer
 {
     background-color: #fcebeb;
+}
+
+#control-btn {
+    text-align: center;
 }

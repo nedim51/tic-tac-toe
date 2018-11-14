@@ -9,13 +9,13 @@
       <p class="message">Чтобы начать игру войдите или <a (click)="view='register';message=undefined;windowReady()">зарегистрируйтесь.</a></p>
       <label style="margin-top:20px" ng-show="message!=undefined">{{message}}</label>
     </form>
-    <form id="register-form" *ngIf="view=='register'"><!--/*pattern="[a-z]+@[a-z]+\.[a-z]{2,4}$"-->
+    <form id="register-form" *ngIf="view=='register'"> <!--/*pattern="[a-z]+@[a-z]+\.[a-z]{2,4}$"-->
       <input #nameReg type="text" placeholder="Имя">
-      <input #surnameReg type="text" placeholder="Фамилия"/>
-      <input #loginReg type="text" placeholder="Логин"/>
-      <input #passwordReg type="password" placeholder="Пароль"/>
-      <input #emailReg type="email" placeholder="Email (не обязательно)"/>
-      <button (click)="registration($event, {name: nameReg.value, surname: surnameReg.value, login: loginReg.value, password: passwordReg.value, email: emailReg.value })">Зарегистрироваться и войти</button>
+      <input #surnameReg type="text" placeholder="Фамилия" />
+      <input #loginReg type="text" placeholder="Логин" />
+      <input #passwordReg type="password" placeholder="Пароль" />
+      <input #emailReg type="email" placeholder="Email (не обязательно)" />
+      <button (click)="registration($event, { name: nameReg.value, surname: surnameReg.value, login: loginReg.value, password: passwordReg.value, email: emailReg.value })">Зарегистрироваться и войти</button>
       <p class="message">Уже зарегистрированны? <a (click)="view='login';message=undefined">Войдите.</a></p>
       <label style="margin-top:20px" ng-show="message!=undefined">{{message}}</label>
     </form>

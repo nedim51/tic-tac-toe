@@ -1,0 +1,16 @@
+.item:hover, .item:active, .itemfocus {
+    background: rgba(0, 171, 255, 0.13);
+}
+
+.item {
+    height: 99px;
+    width: 99px;
+    font-size: 50pt;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+/* table {
+    border: 0px solid white;
+} */

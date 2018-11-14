@@ -2,20 +2,13 @@
 <label class="message" ng-show="message!=undefined">{{message}}</label>
 
 <table class="game-table table-bordered">
-  <tr>
-    <td class="item"></td>
-    <td class="item"></td>
-    <td class="item"></td>
-  <tr>
-    <td class="item"></td>
-    <td class="item"></td>
-    <td class="item"></td>
-  <tr>
-    <td class="item"></td>
-    <td class="item"></td>
-    <td class="item"></td>
-</table>
 
+<router-outlet></router-outlet>
+
+</table>
+<div id="control-btn">
+  <button class="btn btn-outline-success" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'">Сдаться</button>
+</div>
 <div>
   <h2 class="title-score">СЕЙЧАС В СЕТИ</h2>
   <table class="table">

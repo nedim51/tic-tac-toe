@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         (data: any) => {
           if (data.success) {
             localStorage.setItem('token', data.id_token);
-            this.router.navigate(['header/home']);
+            this.router.navigate(['header/home/menu']);
             console.log('Token added in local storage!');
           }
           else this.message = data.message;
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
         (data: any) => {
           if (data.success) {
             localStorage.setItem('token', data.id_token);
-            this.router.navigate(['header/home']);
+            this.router.navigate(['header/home/menu']);
             console.log('Token added in local storage!');
           }
           else {
