@@ -5,20 +5,56 @@
 .item {
     height: 99px;
     width: 99px;
-    font-size: 50pt;
     font-weight: 900;
     text-align: center;
     cursor: pointer;
     transition: 0.5s;
 }
 
-/* table {
-    border: 0px solid white;
-} */
-
-.material-icons.md-48.zr { 
-    font-size: 48px;
+.cr, .zr {
+    animation-duration: 0.3s;
+    animation-direction: normal;
+    animation-timing-function: linear;
 }
-.material-icons.md-48.cr { 
-    font-size: 58px;
+
+.zr { 
+    font-size: 33px;
+    animation-name: size-zr;
+}
+
+.cr { 
+    font-size: 43px;
+    animation-name: size-cr;
+}
+
+
+
+@keyframes size-cr{
+    0% {
+        font-size: 45px;  
+    }
+    80% {
+        font-size: 35px;
+    }
+    90% {
+        font-size: 40px;
+    }
+    100% {
+        font-size: 43px;
+    }
+}
+
+@keyframes size-zr{
+    0% {
+        font-size: 35px;  
+    }
+    80% {
+        font-size: 25px;
+    }
+    90% {
+        font-size: 30px;
+    }
+    100% {
+        font-size: 33px;
+    }
 }

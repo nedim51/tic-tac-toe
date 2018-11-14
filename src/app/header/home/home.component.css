@@ -57,12 +57,7 @@ span {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
 }
-/* .header {
-    margin: auto;
-    width: max-content;
-    height: 80px;
-    cursor: default;
-} */
+
 .message {
     padding-left: 12px;
     padding-top: 3px;
