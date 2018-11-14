@@ -15,6 +15,7 @@ import { MediumComponent } from './home/menu/menubot/medium/medium.component';
 import { HardComponent } from './home/menu/menubot/hard/hard.component';
 import { FieldComponent } from './home/menu/menubot/field/field.component';
 import { OnepcComponent } from './home/menu/menuperson/onepc/onepc.component';
+import { MenupersonComponent } from './home/menu/menuperson/menuperson.component';
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent, children: [
@@ -27,7 +28,7 @@ const routes: Routes = [
       { path: 'field', component: FieldComponent },
       { path: 'hard', component: HardComponent },
       { path: 'field', component: FieldComponent }, 
-      { path: 'menuperson', component: MenuComponent },
+      { path: 'menuperson', component: MenupersonComponent },
       { path: 'onepc', component: OnepcComponent },
       { path: 'field', component: FieldComponent }
     ]},

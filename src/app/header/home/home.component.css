@@ -99,6 +99,9 @@ span {
 #online-tab-all {
     text-align: initial;
 }
+.online-tab-line {
+    text-align: center;
+}
 #online-tab-score {
     height: 37px;
     width: 83px;

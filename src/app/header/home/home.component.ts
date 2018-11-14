@@ -13,6 +13,38 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     console.log(this.router.url);
   }
+  public onlineUserItems: Array<Object> = [
+    {
+      name: 'Петя',
+      level: '3',
+      score: '24',
+      icon: 'touch_app'
+    },
+    {
+      name: 'Вася',
+      level: '4',
+      score: '54',
+      icon: 'close'
+    },
+    {
+      name: 'Коля',
+      level: '1',
+      score: '14',
+      icon: 'close'
+    },
+    {
+      name: 'Даша',
+      level: '6',
+      score: '62',
+      icon: 'touch_app'
+    },
+    {
+      name: 'Маша',
+      level: '4',
+      score: '54',
+      icon: 'touch_app'
+    }];
+
 
   message;
 }

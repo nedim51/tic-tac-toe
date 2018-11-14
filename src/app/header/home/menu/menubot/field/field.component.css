@@ -11,6 +11,14 @@
     cursor: pointer;
     transition: 0.5s;
 }
+
 /* table {
     border: 0px solid white;
 } */
+
+.material-icons.md-48.zr { 
+    font-size: 48px;
+}
+.material-icons.md-48.cr { 
+    font-size: 58px;
+}

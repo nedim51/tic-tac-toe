@@ -1,7 +1,6 @@
 <div class="head">
   <ol>
     <img src="{{defaultImage}}" alt="avatar" id="header-avatar">
-    <li [routerLink]="homeButton.route">{{this.router.url == '/header/home' ? homeButton.title : homeButton.title2}}</li>
     <li *ngFor="let item of menuItems" [routerLink]="item.route">{{item.title}}</li>
     <li [routerLink]="exitButton.route" (click)="exitButton.exit()">{{exitButton.title}}</li>
   </ol>

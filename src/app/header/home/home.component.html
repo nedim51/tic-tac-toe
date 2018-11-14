@@ -6,9 +6,11 @@
 <router-outlet></router-outlet>
 
 </table>
+
 <div id="control-btn">
   <button class="btn btn-outline-success" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'">Сдаться</button>
 </div>
+
 <div>
   <h2 class="title-score">СЕЙЧАС В СЕТИ</h2>
   <table class="table">
@@ -16,18 +18,20 @@
       <tr>
         <th scope="row">#</th>
         <th>Имя</th>
-        <th>Фамилия</th>
-        <th id="online-tab-score">Уровень</th>
+        <th>Уровень</th>
+        <th id="online-tab-score">Опыт</th> 
+        <th id="online-tab-score"><i class="material-icons">done</i></th>
       </tr>
     </thead>
     <tbody id="online-tab-all">
 
-      <!-- <tr id="0" class="online-tab-line" *ngFor="let item of onlineusers; index as i;" (click)="GameForTwo(i)">
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td id="online-tab-score"></td>
-      </tr> -->
+        <tr class="online-tab-line" *ngFor="let item of onlineUserItems; index as i;">
+            <th scope="row">{{i}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.level}}</td>
+            <td id="online-tab-score">{{item.score}}</td>
+            <td id="online-tab-score"><i class="material-icons">{{item.icon}}</i></td>
+        </tr>
 
     </tbody>
   </table>

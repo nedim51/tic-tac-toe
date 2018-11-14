@@ -17,22 +17,11 @@ export class HeaderComponent implements OnInit {
   defaultImage: string = 'https://pp.userapi.com/c845220/v845220719/12e05e/HT2PQer7l2U.jpg';
   user: object = [{ name: undefined, surname: undefined }];
 
-  homeButton: object = {
-    title: `Привет, ${this.user[0].name}`,
-    title2: 'Главная',
-    route: '/header/home'
-   };
-   
-   exitButton: object = {
-     title: 'Выйти',
-     route: '/login',
-     exit:  function() {
-      localStorage.removeItem('token');
-      console.log("Token is removed!");
-     }
-   };
-
   public menuItems: Array<Object> = [
+    {
+      title: 'Главная',
+      route: '/header/home/menu'
+     },
     {
       title: 'Статистика',
       route: '/header/statistic'
@@ -46,4 +35,14 @@ export class HeaderComponent implements OnInit {
       route: '/header/settings'
     }
   ];
+
+  exitButton: object = {
+    title: 'Выйти',
+    route: '/login',
+    exit:  function() {
+     localStorage.removeItem('token');
+     console.log("Token is removed!");
+    }
+  };
+
 }
