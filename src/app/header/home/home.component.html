@@ -7,8 +7,9 @@
 
 </table>
 
-<div id="control-btn">
-  <button class="btn btn-outline-success" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'">Сдаться</button>
+<div id="control-btn" >
+  <button class="btn btn-outline-success btn-control" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'">Отключиться</button>
+  <button class="btn btn-outline-success btn-control" *ngIf="router.url=='/header/home/field'" (click)="this.share.field = this.share.clearField()">Hовая игра</button>
 </div>
 
 <div>
@@ -17,6 +18,7 @@
     <thead>
       <tr>
         <th scope="row">#</th>
+        <th>Аватар</th>
         <th>Имя</th>
         <th>Уровень</th>
         <th id="online-tab-score">Опыт</th> 
@@ -27,6 +29,7 @@
 
         <tr class="online-tab-line" *ngFor="let item of onlineUserItems; index as i;">
             <th scope="row">{{i}}</th>
+            <td><img src="{{item.avatar}}" id="online-table-avatar"></td>
             <td>{{item.name}}</td>
             <td>{{item.level}}</td>
             <td id="online-tab-score">{{item.score}}</td>

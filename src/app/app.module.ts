@@ -12,6 +12,7 @@ import { LeadersComponent } from './header/leaders/leaders.component';
 import { StatisticComponent } from './header/statistic/statistic.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ShareService } from './share.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ShareService],
   bootstrap: [AppComponent]
 })
 

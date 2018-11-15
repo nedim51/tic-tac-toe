@@ -1,3 +1,6 @@
+.table {
+    vertical-align: middle;
+}
 table {
     margin: -1px auto 35px;
     color: black; 
@@ -329,4 +332,15 @@ body
 
 #control-btn {
     text-align: center;
+}
+#online-table-avatar {
+    margin: -7px -5px -7px 0px;
+    padding: 0px;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-control {
+    margin: 5px;
 }

@@ -1,17 +1,16 @@
 body {
     user-select: none;
     font-family: "Roboto", sans-serif;
-
 }
 
 .head {
     background-color: #4caf50df;
-    margin: -2px 0px 0px 0px;
+    margin: -3px 0px 0px 0px;
 }
 
 .head ol {
     list-style-type: none;
-    padding: 1px;
+    padding: 2px 0px 2px 0px;
     text-align: center;
 }
 
@@ -31,7 +30,7 @@ body {
 }
 
 #header-avatar {
-    border: 1px solid green;
+    border-radius: 25px;
     width: 50px;
     height: 50px;
 }

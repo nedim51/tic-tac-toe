@@ -1,4 +1,4 @@
-.item:hover, .item:active, .itemfocus {
+.item:hover {
     background: rgba(0, 171, 255, 0.13);
 }
 
@@ -9,6 +9,7 @@
     text-align: center;
     cursor: pointer;
     transition: 0.5s;
+    /* background-color: white; */
 }
 
 .cr, .zr {
@@ -27,7 +28,12 @@
     animation-name: size-cr;
 }
 
-
+.cl-good {
+    background-color: white;
+}
+.cl-no-good, .cl-no-good:hover {
+    background-color: #F44336;
+}
 
 @keyframes size-cr{
     0% {
