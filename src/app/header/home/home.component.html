@@ -1,5 +1,5 @@
 <label class="message"></label>
-<label class="message" ng-show="message!=undefined">{{message}}</label>
+<label class="message" ng-show="message!=undefined">{{this.share.message}}</label>
 
 <table class="game-table table-bordered">
 
@@ -8,7 +8,7 @@
 </table>
 
 <div id="control-btn" >
-  <button class="btn btn-outline-success btn-control" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'">Отключиться</button>
+  <button class="btn btn-outline-success btn-control" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'" (click)="this.share.field = this.share.clearField()">Отключиться</button>
   <button class="btn btn-outline-success btn-control" *ngIf="router.url=='/header/home/field'" (click)="this.share.field = this.share.clearField()">Hовая игра</button>
 </div>
 
