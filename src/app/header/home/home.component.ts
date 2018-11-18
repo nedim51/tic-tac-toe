@@ -16,6 +16,14 @@ export class HomeComponent implements OnInit {
     
   }
 
+view = 'menu';
+message;
+gField;
+  
+  ngDoCheck() {
+    this.gField = this.share.field;
+  }
+  
   public onlineUserItems: Array<Object> = [
     {
       avatar: 'https://pp.userapi.com/c845220/v845220719/12e05e/HT2PQer7l2U.jpg',
@@ -52,7 +60,4 @@ export class HomeComponent implements OnInit {
       score: '54',
       icon: 'touch_app'
     }];
-
-  message;
-
 }

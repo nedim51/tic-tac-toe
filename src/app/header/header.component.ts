@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   public menuItems: Array<Object> = [
     {
       title: 'Главная',
-      route: '/header/home/menu'
+      route: '/header/home'
      },
     {
       title: 'Статистика',

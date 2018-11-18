@@ -1,15 +1,50 @@
-<!-- <label class="message"></label> -->
 <label class="message" ng-show="message!=undefined">{{this.share.message}}</label>
 
 <table class="game-table table-bordered">
 
-<router-outlet></router-outlet>
+<div *ngIf="view == 'menu'">
+  <img id="home-img" src="https://pp.userapi.com/c837338/v837338590/4f7b8/xcJb9Ut-BWg.jpg">
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'menu-bot'">Бот</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'menu-person'">Два игрока</button>
+</div>
+
+  <div *ngIf="view == 'menu-bot'">
+    <button class="btn btn-outline-success menu-btn-back" (click)="view = 'menu'">Назад</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'game';mode = 'easy'">Легкий</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'game';mode = 'middle'">Средний</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'game';mode = 'hard'">Сложный</button>
+  </div>
+
+  <div *ngIf="view == 'menu-person'">
+    <button class="btn btn-outline-success menu-btn-back" (click)="view = 'menu'">Назад</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'game';mode = 'one-pc'">На одном ПК</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'game';mode = 'list-online'">Список онлайн</button>
+    <button class="btn btn-outline-success menu-btn" (click)="view = 'game';mode = 'searsh-person'">Подобрать игрока</button>
+  </div>
+
+  <div *ngIf="view == 'game'">
+    <tr>
+      <td class="item {{gField[0][0].errClass}}" (click)="this.share.add(0, 0)"> <i *ngIf="gField[0][0].content"  class="material-icons {{gField[0][0].class}}">{{gField[0][0].content}}</i> </td>
+      <td class="item {{gField[0][1].errClass}}" (click)="this.share.add(0, 1)"> <i *ngIf="gField[0][1].content"  class="material-icons {{gField[0][1].class}}">{{gField[0][1].content}}</i> </td>
+      <td class="item {{gField[0][2].errClass}}" (click)="this.share.add(0, 2)"> <i *ngIf="gField[0][2].content"  class="material-icons {{gField[0][2].class}}">{{gField[0][2].content}}</i> </td>
+    <tr>
+      <td class="item {{gField[1][0].errClass}}" (click)="this.share.add(1, 0)"> <i *ngIf="gField[1][0].content"  class="material-icons {{gField[1][0].class}}">{{gField[1][0].content}}</i> </td>
+      <td class="item {{gField[1][1].errClass}}" (click)="this.share.add(1, 1)"> <i *ngIf="gField[1][1].content"  class="material-icons {{gField[1][1].class}}">{{gField[1][1].content}}</i> </td>
+      <td class="item {{gField[1][2].errClass}}" (click)="this.share.add(1, 2)"> <i *ngIf="gField[1][2].content"  class="material-icons {{gField[1][2].class}}">{{gField[1][2].content}}</i> </td>
+    <tr>
+      <td class="item {{gField[2][0].errClass}}" (click)="this.share.add(2, 0)"> <i *ngIf="gField[2][0].content"  class="material-icons {{gField[2][0].class}}">{{gField[2][0].content}}</i> </td>
+      <td class="item {{gField[2][1].errClass}}" (click)="this.share.add(2, 1)"> <i *ngIf="gField[2][1].content"  class="material-icons {{gField[2][1].class}}">{{gField[2][1].content}}</i> </td>
+      <td class="item {{gField[2][2].errClass}}" (click)="this.share.add(2, 2)"> <i *ngIf="gField[2][2].content"  class="material-icons {{gField[2][2].class}}">{{gField[2][2].content}}</i> </td>
+</div>
+<div *ngIf="view == 'end-game'">
+  <p>Вы победили или проиграли или ничья.</p>
+</div>
 
 </table>
 
 <div id="control-btn" >
-  <button class="btn btn-outline-success btn-control" [routerLink]="['/header/home/menu']" *ngIf="router.url=='/header/home/field'" (click)="this.share.field = this.share.clearField()">Отключиться</button>
-  <button class="btn btn-outline-success btn-control" *ngIf="router.url=='/header/home/field'" (click)="this.share.field = this.share.clearField()">Hовая игра</button>
+  <button class="btn btn-outline-success btn-control" *ngIf="view == 'game'" (click)="view = 'menu';this.share.field = this.share.clearField()">Отключиться</button>
+  <button class="btn btn-outline-success btn-control" *ngIf="view == 'game'" (click)="this.share.field = this.share.clearField()">Hовая игра</button>
 </div>
 
 <div>

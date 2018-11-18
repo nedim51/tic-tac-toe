@@ -12,7 +12,7 @@ table {
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 } 
-.item {
+/* .item {
     height: 100px;
     width: 100px;
     font-size: 50pt;
@@ -20,7 +20,7 @@ table {
     text-align: center;
     cursor: pointer;
     transition: 0.5s;
-}
+} */
 #reload:hover, #reload:active, #reload:focus,
 span:hover, span:active, span:focus,
 .online-tab-line:hover, .online-tab-line:active, .online-tab-line:focus {
@@ -63,11 +63,11 @@ span {
 
 .message {
     padding-left: 12px;
-    padding-top: 8px;
+    padding-top: 10px;
     color: #000000;
     background: rgba(0, 171, 255, 0.13);
     display: grid;
-    height: 40px;
+    height: 50px;
     width: 280px;
     margin: 30px auto 1px auto;
 }
@@ -160,8 +160,7 @@ span {
 
 /* CSS rules are kept repetitive so that you can get CSS rules for each button easily :) */
 
-*
-{
+* {
     user-select: none;
 }
 
@@ -169,7 +168,7 @@ span {
 {
     outline: none;
 }
-
+/*
 body
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -261,7 +260,7 @@ body
     z-index: 1;
 }
 
-/* Button 11 */
+/* Button 11 
 #button-11
 {
     overflow: visible;
@@ -329,7 +328,7 @@ body
 {
     background-color: #fcebeb;
 }
-
+*/
 #control-btn {
     text-align: center;
 }
@@ -343,4 +342,109 @@ body
 
 .btn-control {
     margin: 5px;
+} 
+
+/*******************************************************************/
+
+.btn.btn-outline-success.menu-btn {
+    width: 265px;
+    margin: 5px 0px 5px 0px;
 }
+
+.menu-btn-back {
+    width: 265px;
+    margin: 20px 0px 55px 0px;
+} 
+
+.item:hover {
+    background: rgba(0, 171, 255, 0.13);
+}
+
+.item {
+    height: 99px;
+    width: 99px;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.cr, .zr {
+    animation-duration: 0.3s;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+.zr { 
+    font-size: 33px;
+    animation-name: size-zr;
+}
+
+.cr { 
+    font-size: 43px;
+    animation-name: size-cr;
+}
+
+.cl-good {
+    background-color: white;
+}
+.cl-no-good, .cl-no-good:hover {
+    background-color: #F44336;
+    cursor: pointer;
+}
+
+@keyframes size-cr{
+    0% {
+        font-size: 45px;  
+    }
+    80% {
+        font-size: 35px;
+    }
+    90% {
+        font-size: 40px;
+    }
+    100% {
+        font-size: 43px;
+    }
+}
+
+@keyframes size-zr{
+    0% {
+        font-size: 35px;  
+    }
+    80% {
+        font-size: 25px;
+    }
+    90% {
+        font-size: 30px;
+    }
+    100% {
+        font-size: 33px;
+    }
+}
+
+.btn.btn-outline-success.menu-btn {
+    width: 265px;
+    margin: 12.50px 0px 6.25px 0px;
+}
+
+#home-img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 70px auto 50px auto;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
