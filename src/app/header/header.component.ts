@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
     
   }
 
-  defaultImage: string = 'https://pp.userapi.com/c845220/v845220719/12e05e/HT2PQer7l2U.jpg';
   user: object = [{ name: undefined, surname: undefined }];
 
   public menuItems: Array<Object> = [

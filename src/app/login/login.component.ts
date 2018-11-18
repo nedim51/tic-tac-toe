@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       }, 10);
     }, 100);
   }
-
+  
   auth(event, login, password) {
     event.preventDefault();
     this.message = undefined;

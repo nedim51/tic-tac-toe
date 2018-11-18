@@ -10,8 +10,12 @@ export class FieldComponent implements OnInit {
   
   constructor(private share: ShareService) { }
 
-  ngOnInit() {
-    
+  gField;
+
+  ngOnInit() {    
   }
-  
+
+  ngDoCheck() {
+    this.gField = this.share.field;
+  }
 }

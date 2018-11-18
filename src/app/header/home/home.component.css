@@ -63,13 +63,13 @@ span {
 
 .message {
     padding-left: 12px;
-    padding-top: 3px;
+    padding-top: 8px;
     color: #000000;
     background: rgba(0, 171, 255, 0.13);
-    display: grid; 
-    height: 35px;
+    display: grid;
+    height: 40px;
     width: 280px;
-    margin: -1px auto 1px;
+    margin: 30px auto 1px auto;
 }
 #reset-button, .lvl, .message {
     text-align: center;

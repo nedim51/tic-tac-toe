@@ -1,6 +1,6 @@
 <div class="head">
   <ol>
-    <img src="{{defaultImage}}" alt="avatar" id="header-avatar">
+    <li id="header-avatar"></li>
     <li *ngFor="let item of menuItems" [routerLink]="item.route">{{item.title}}</li>
     <li [routerLink]="exitButton.route" (click)="exitButton.exit()">{{exitButton.title}}</li>
   </ol>

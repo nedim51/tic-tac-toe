@@ -31,6 +31,9 @@ body {
 
 #header-avatar {
     border-radius: 25px;
+    margin: 2px auto -20px auto;
     width: 50px;
     height: 50px;
+    background-image: url(https://pp.userapi.com/c845220/v845220719/12e05e/HT2PQer7l2U.jpg);
+    background-size: cover;
 }

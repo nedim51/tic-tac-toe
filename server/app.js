@@ -18,7 +18,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/ticTacToe/index.html'));
 });
 
-server.listen(3000, function () {
-  console.log('Сервер работает! Порт: 3000');
-});
+//var db = require("./models");
 
+//db.engine.sync().then(function () {
+  //db.init();
+  server.listen(3000, function () {
+    console.log('Сервер работает! Порт: 3000');
+  });  
+//});
