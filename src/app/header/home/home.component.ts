@@ -22,6 +22,7 @@ gField;
   
   ngDoCheck() {
     this.gField = this.share.field;
+    this.message = this.share.message;
   }
   
   public onlineUserItems: Array<Object> = [

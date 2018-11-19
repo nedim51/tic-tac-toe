@@ -11,18 +11,13 @@ const io = require('socket.io').listen(server);
 
 app.use(global.jsonParser = bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
-app.use(express.static(path.join(__dirname, '../dist/ticTacToe')));
+app.use(express.static(path.join(__dirname, '../dist')));
 app.use(require('./routes/auth'));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/ticTacToe/index.html'));
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-//var db = require("./models");
-
-//db.engine.sync().then(function () {
-  //db.init();
-  server.listen(3000, function () {
-    console.log('Сервер работает! Порт: 3000');
-  });  
-//});
+server.listen(3000, function () {
+  console.log('Сервер работает! Порт: 3000');
+});  

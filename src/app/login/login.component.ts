@@ -66,8 +66,10 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token', data.id_token);
             this.router.navigate(['header/home']);
             console.log('Token added in local storage!');
+            console.log(data.id_token);
           }
           else {
+            console.log(data.message);
             return this.message = data.message;
           }
         },
