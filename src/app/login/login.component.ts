@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-type response = { success, message };
+type response = { success, message, value };
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(public router: Router, private httpClient: HttpClient) { };
 
   message: string = undefined;
-  view: string = "login";
+  view: string = 'login';
+  errorStyle: string = '#f2f2f2';
 
   ngOnInit() {
   }
@@ -29,14 +30,19 @@ export class LoginComponent implements OnInit {
       }, 10);
     }, 100);
     setTimeout(() => {
-      var loginQuery = this.view == 'register' ? document.querySelector('#loginQuery')
-        .addEventListener('input', (event: KeyboardEvent) => {
+      var loginQuery = (this.view == 'register') ? document.querySelector('#loginQuery') : undefined;
+      loginQuery.addEventListener('input', (event: KeyboardEvent) => {
           this.httpClient.post('/createLoginRequest', { value: (event.target as HTMLInputElement).value })
             .subscribe((result) => {
               console.log(result);
+              if((result as response).success && (result as response).value.length > 3) {
+                this.errorStyle = '#4CAF50';
+              } else if((result as response).value.length > 3){
+                this.errorStyle = 'rgb(244, 67, 54)';
+              }
               //console.log((result as response).message);
             })
-        }) : undefined;
+        });
     }, 1000);
 
   }

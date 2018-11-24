@@ -49,7 +49,7 @@ export class ShareService {
 
     public endGame() {
         //this.x_o = 'x';
-        alert('Чет там...');
+        //alert('Чет там...');
     }
 
     check(item) {
