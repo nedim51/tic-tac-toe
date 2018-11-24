@@ -16,15 +16,21 @@ export class HomeComponent implements OnInit {
     
   }
 
-view = 'menu';
-message;
-gField;
+  errorClass  = [[,,],[,,],[,,]];
+  iconContent = [[,,],[,,],[,,]];
+  gameField   = [[,,],[,,],[,,]];
+  view = 'menu';
+  message;
+  mode;
   
+
   ngDoCheck() {
-    this.gField = this.share.field;
+    this.errorClass  = this.share.errorClass; 
+    this.iconContent = this.share.iconContent;
+    this.gameField = this.share.gameField;
     this.message = this.share.message;
-  }
-  
+  }  
+
   public onlineUserItems: Array<Object> = [
     {
       avatar: 'https://pp.userapi.com/c845220/v845220719/12e05e/HT2PQer7l2U.jpg',

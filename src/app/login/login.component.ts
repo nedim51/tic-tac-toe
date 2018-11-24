@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
+type response = { success, message };
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +17,6 @@ export class LoginComponent implements OnInit {
   view: string = "login";
 
   ngOnInit() {
-
   }
 
   windowReady() {
@@ -27,8 +28,19 @@ export class LoginComponent implements OnInit {
         if (i > 150) clearInterval(intervalId);
       }, 10);
     }, 100);
+    setTimeout(() => {
+      var loginQuery = this.view == 'register' ? document.querySelector('#loginQuery')
+        .addEventListener('input', (event: KeyboardEvent) => {
+          this.httpClient.post('/createLoginRequest', { value: (event.target as HTMLInputElement).value })
+            .subscribe((result) => {
+              console.log(result);
+              //console.log((result as response).message);
+            })
+        }) : undefined;
+    }, 1000);
+
   }
-  
+
   auth(event, login, password) {
     event.preventDefault();
     this.message = undefined;
@@ -38,9 +50,12 @@ export class LoginComponent implements OnInit {
           if (data.success) {
             localStorage.setItem('token', data.id_token);
             this.router.navigate(['header/home']);
-            console.log('Token added in local storage!');
+            console.log(`success: ${data.success}`);
           }
-          else this.message = data.message;
+          else {
+            console.log(`success: ${data.success}`);
+            this.message = data.message;
+          }
         },
         error => {
           console.log(error.text());
@@ -49,27 +64,19 @@ export class LoginComponent implements OnInit {
   }
 
   registration(event, user) {
-    console.log(user);
-
     this.message = undefined;
     event.preventDefault();
 
-    if (user.name == "" || user.surname == "" || user.login == "" || user.password == "") return this.message = "Заполните все поля!";
-    if (user.name.length > 30 || user.surname.length > 30) return this.message = "Имя и Фамилия не может содержать более 30 символов.";
-    if (user.login.length < 4 || user.login.length > 20) return this.message = "Логин не может быть менее 4 и более 20 символов.";
-    if (user.password.length < 8 || user.password.length > 30) return this.message = "Пароль не может быть менее 8 и более 30 символов.";
-
-    this.httpClient.post('/reg', {user: user})
+    this.httpClient.post('/reg', { user: user })
       .subscribe(
         (data: any) => {
           if (data.success) {
             localStorage.setItem('token', data.id_token);
             this.router.navigate(['header/home']);
-            console.log('Token added in local storage!');
-            console.log(data.id_token);
+            console.log(`success: ${data.success}`);
           }
           else {
-            console.log(data.message);
+            console.log(`success: ${data.success}`);
             return this.message = data.message;
           }
         },

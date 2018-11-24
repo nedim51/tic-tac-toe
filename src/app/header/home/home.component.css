@@ -1,9 +1,10 @@
 .table {
     vertical-align: middle;
 }
+
 table {
     margin: -1px auto 35px;
-    color: black; 
+    color: black;
     position: relative;
     z-index: 1;
     background: #FFFFFF;
@@ -11,7 +12,8 @@ table {
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-} 
+}
+
 /* .item {
     height: 100px;
     width: 100px;
@@ -21,37 +23,41 @@ table {
     cursor: pointer;
     transition: 0.5s;
 } */
-#reload:hover, #reload:active, #reload:focus,
-span:hover, span:active, span:focus,
-.online-tab-line:hover, .online-tab-line:active, .online-tab-line:focus {
+
+#reload:hover, #reload:active, #reload:focus, span:hover, span:active, span:focus, .online-tab-line:hover, .online-tab-line:active, .online-tab-line:focus {
     background: #43A047;
     cursor: pointer;
 }
-#cancel:hover, #cancel:active, #cancel:focus{
+
+#cancel:hover, #cancel:active, #cancel:focus {
     background: #43A047;
     cursor: pointer;
 }
-#ok:hover, #ok:active, #ok:focus{
+
+#ok:hover, #ok:active, #ok:focus {
     background: #43A047;
     cursor: pointer;
 }
+
 .item:hover, .item:active, .itemfocus {
     background: rgba(0, 171, 255, 0.13);
 }
+
 span {
-    height: 50px; 
+    height: 50px;
     display: inline-flex;
     background: #4CAF50;
 }
+
 #reload {
     margin: auto;
     height: 50px;
     display: inline-block;
     background: #4CAF50;
 }
+
 #reload, span, #cancel, #ok {
     font-family: "Roboto", sans-serif;
-    
     outline: 0;
     border: 0;
     padding: 15px;
@@ -62,18 +68,29 @@ span {
 }
 
 .message {
-    padding-left: 12px;
+    /* padding-left: 12px;
     padding-top: 10px;
     color: #000000;
     background: rgba(0, 171, 255, 0.13);
     display: grid;
     height: 50px;
     width: 280px;
-    margin: 30px auto 1px auto;
+    margin: 30px auto 1px auto; */
+    
+    padding-top: 5px;
+    color: #000000;
+    /*background: rgba(0, 171, 255, 0.13);*/
+    display: grid;
+    height: 35px;
+    width: 145px;
+    margin: 15px auto 15px auto;
+    /*box-shadow: rgba(0, 171, 255, 0.13) 0px 0px 5px 5px;*/
 }
+
 #reset-button, .lvl, .message {
     text-align: center;
 }
+
 .title-score {
     padding-left: 5px;
     background: rgba(0, 171, 255, 0.13);
@@ -84,22 +101,27 @@ span {
     text-align: center;
     font-size: 20px;
 }
+
 .game-table {
     width: 300px;
     height: 300px;
 }
+
 .lvl {
     margin: 35px auto 0px;
     background: blanchedalmond;
     width: 118px;
     font-size: unset;
 }
+
 #online-tab-all {
     text-align: initial;
 }
+
 .online-tab-line {
     text-align: center;
 }
+
 #online-tab-score {
     height: 37px;
     width: 83px;
@@ -116,12 +138,14 @@ span {
     top: 0;
     left: 0;
 }
+
 #popup {
     height: 200px;
     width: 300px;
     color: #000000;
     margin: 250px auto;
 }
+
 #cancel {
     margin: auto;
     height: 50px;
@@ -129,19 +153,22 @@ span {
     text-align: center;
     background: #AD0404;
 }
+
 #messageText {
     margin: 35px auto;
     text-align: center;
     font-size: large;
     color: white;
 }
-#ok{
+
+#ok {
     margin: auto;
     height: 50px;
     width: 150px;
     text-align: center;
     background: #4CAF50;
 }
+
 #notouch {
     background: #000000;
     height: 100%;
@@ -154,6 +181,7 @@ span {
 }
 
 /************/
+
 #homeGame {
     margin: 90px 0px 20px 0px;
 }
@@ -164,10 +192,10 @@ span {
     user-select: none;
 }
 
-*:focus
-{
+*:focus {
     outline: none;
 }
+
 /*
 body
 {
@@ -329,9 +357,11 @@ body
     background-color: #fcebeb;
 }
 */
+
 #control-btn {
     text-align: center;
 }
+
 #online-table-avatar {
     margin: -7px -5px -7px 0px;
     padding: 0px;
@@ -342,7 +372,7 @@ body
 
 .btn-control {
     margin: 5px;
-} 
+}
 
 /*******************************************************************/
 
@@ -354,7 +384,7 @@ body
 .menu-btn-back {
     width: 265px;
     margin: 20px 0px 55px 0px;
-} 
+}
 
 .item:hover {
     background: rgba(0, 171, 255, 0.13);
@@ -370,18 +400,18 @@ body
     cursor: pointer;
 }
 
-.cr, .zr {
+.x, .o {
     animation-duration: 0.3s;
     animation-direction: normal;
     animation-timing-function: linear;
 }
 
-.zr { 
+.o {
     font-size: 33px;
     animation-name: size-zr;
 }
 
-.cr { 
+.x {
     font-size: 43px;
     animation-name: size-cr;
 }
@@ -389,39 +419,10 @@ body
 .cl-good {
     background-color: white;
 }
+
 .cl-no-good, .cl-no-good:hover {
     background-color: #F44336;
     cursor: pointer;
-}
-
-@keyframes size-cr{
-    0% {
-        font-size: 45px;  
-    }
-    80% {
-        font-size: 35px;
-    }
-    90% {
-        font-size: 40px;
-    }
-    100% {
-        font-size: 43px;
-    }
-}
-
-@keyframes size-zr{
-    0% {
-        font-size: 35px;  
-    }
-    80% {
-        font-size: 25px;
-    }
-    90% {
-        font-size: 30px;
-    }
-    100% {
-        font-size: 33px;
-    }
 }
 
 .btn.btn-outline-success.menu-btn {
@@ -438,13 +439,43 @@ body
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-  }
+}
 
-  @keyframes spin {
+@keyframes spin {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
+
+@keyframes size-cr {
+    0% {
+        font-size: 45px;
+    }
+    80% {
+        font-size: 35px;
+    }
+    90% {
+        font-size: 40px;
+    }
+    100% {
+        font-size: 43px;
+    }
+}
+
+@keyframes size-zr {
+    0% {
+        font-size: 35px;
+    }
+    80% {
+        font-size: 25px;
+    }
+    90% {
+        font-size: 30px;
+    }
+    100% {
+        font-size: 33px;
+    }
+}
